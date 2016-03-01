@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "hashicorp/precise64"
+  config.vm.box = "ubuntu/wily64"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -49,8 +49,8 @@ Vagrant.configure(2) do |config|
   #   vb.gui = true
   #
   #   # Customize the amount of memory on the VM:
-  vb.memory = "3072"
-  vb.cpus = 2
+  vb.memory = "2048"
+  vb.cpus = 1
   end
   #
   # View the documentation for the provider you are using for more
@@ -104,9 +104,9 @@ config.vm.define "vm1" do |vm1|
 
   config.vm.define "vm3" do |vm3|
   vm3.vm.hostname = 'vm3-hostname'
-   #vm3.hostmanager.aliases = %w(vm3-box.localdomain vm3-box-alias)
-   vm3.vm.network "private_network", ip: "172.28.128.7"
-  end
+    #vm3.hostmanager.aliases = %w(vm3-box.localdomain vm3-box-alias)
+  vm3.vm.network "private_network", ip: "172.28.128.7"
+ end
 
 
 
